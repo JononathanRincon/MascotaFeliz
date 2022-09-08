@@ -8,4 +8,4 @@ namespace MascotaFeliz.App.Dominio
         public DateTime FechaInicial {get;set;}
         public List<VisitaPyP> VisitaPyP {get;set;}
     }
-}2
+}
