@@ -1,0 +1,63 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.ListaVeterinariosModel
+@{
+}
+<style>
+    table{
+    align-items: center;
+    width: 80%;
+    margin: 10px 20px 10px 0px;
+    text-align: center;
+    border-collapse: collapse;
+    background-color: rgb(97, 97, 97);    
+}
+th, td{
+    padding: 15px;
+}
+thead{
+    background-color: #533483;
+    border-bottom: solid 2px #16213E;
+    color: white;
+}
+
+tr:nth-child(even){
+    background-color: #0F3460;
+}
+tr:hover{
+    background-color: #16213E;
+    color: white;
+}
+</style>
+<h1 style="color: white;">Listado de Veterinarios</h1>
+<table class="table">
+        <thead>
+            <tr>
+                <th scope="col" style="color: white;">TarjetaProfesional</th>
+                <th scope="col" style="color: white;">Nombres</th>
+                <th scope="col" style="color: white;">Apellidos</th>         
+                <th scope="col" style="color: white;"></th> 
+                <th scope="col" style="color: white;"></th> 
+            </tr>
+        </thead>
+    @foreach (var veterinario in Model.listaVeterinarios)
+    {
+        <tr>
+            
+            <td style="color: white;">@veterinario.TarjetaProfesional</td>
+            <td style="color: white;">@veterinario.Nombres</td>
+            <td style="color: white;">@veterinario.Apellidos</td>
+            
+            <td>
+                 <a class = "btn btn-primary table-btn" asp-page="./DetallesVeterinarios" asp-route-veterinarioId="@veterinario.Id">
+                Detalle Veterinario
+                </a>
+            </td>
+               <td>
+                <a class="btn btn-primary table-btn" asp-page="./EditarVeterinarios" asp-route-veterinarioId="@veterinario.Id">
+                    Editar Veterinario
+                </a>
+            </td>
+        </tr>
+    }
+</table>
+<a class = "btn btn-primary table-btn" asp-page="./EditarVeterinarios" class="btn-default">Adicionar Veterinario</a>

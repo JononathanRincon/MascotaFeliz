@@ -1,0 +1,67 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.ListaMascotasModel
+@{
+}
+<style>
+    table{
+    align-items: center;
+    width: 80%;
+    margin: 10px 20px 10px 0px;
+    text-align: center;
+    border-collapse: collapse;
+    background-color: rgb(97, 97, 97);    
+}
+th, td{
+    padding: 15px;
+}
+thead{
+    background-color: #533483;
+    border-bottom: solid 2px #16213E;
+    color: white;
+}
+
+tr:nth-child(even){
+    background-color: #0F3460;
+}
+tr:hover{
+    background-color: #16213E;
+    color: white;
+}
+</style>
+<h1 style="color: white;">Listado Mascotas</h1>
+<table class="table">
+    <thead>
+            <tr>
+                <th scope="col" style="color: white;">N°</th>
+                <th scope="col" style="color: white;">Nombre</th>
+                <th scope="col" style="color: white;">Color</th>
+                <th scope="col" style="color: white;">Especie</th>
+                <th scope="col" style="color: white;">Raza</th>                
+                <th scope="col" style="color: white;"></th> 
+                <th scope="col" style="color: white;"></th> 
+            </tr>
+        </thead>
+ 
+    @foreach (var mascota in Model.listaMascotas)
+   { <tr>
+        <td style="color: white;">@mascota.Id</td>
+        <td style="color: white;">@mascota.Nombre</td>
+        <td style="color: white;">@mascota.Color</td>
+        <td style="color: white;">@mascota.Especie</td>
+        <td style="color: white;">@mascota.Raza</td>
+            <td>
+                <a class="btn btn-primary table-btn" asp-page="./DetallesMascotas" asp-route-mascotaId="@mascota.Id">
+                    Detalle Mascota
+                </a>
+            </td>
+            <td>
+                <a class="btn btn-primary table-btn" asp-page="./EditarMascota" asp-route-mascotaId="@mascota.Id">
+                    Editar mascota
+                </a>
+            </td>
+    </tr>
+
+   }
+</table>
+
+<a class = "btn btn-primary table-btn" asp-page="./EditarMascota" class="btn-default">Adicionar Mascota</a>
