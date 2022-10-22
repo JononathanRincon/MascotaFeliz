@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="~/layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="shortcut icon" type="image/x-icon" href="images/icono.png">
+ 
+</head>
+<body>
+<header>
+
+  <!-- ################################################################################################ -->
+    <img src="~/images/headerppal.png" alt="">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
+            
+            <div class="container">
+              
+                
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <img src="~/images/logo.png" class="nav-link text-white" asp-area="" asp-page="/Index">
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-page="/Index">Inicio</a>
+                        </li>
+                          <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-page="/Duenos/ListaDuenos">Propietario</a>
+                        </li>
+                          <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-page="/Mascotas/ListaMascotas">Mascota</a>
+                        </li>
+                           </li>
+                          <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-page="/Veterinarios/ListaVeterinarios">Veterinario</a>
+                        </li>
+                           </li>
+                           </li>
+                          <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-page="/VisitasPyP/ListaVisitasPyP">Visitas</a>
+                        </li>
+                    
+
+   </header>
+
+    <div class="container" style="padding-bottom: 10em;" >
+         <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+     <div style="position: absolute ; padding-top: 0px; width: 100%">
+     
+     
+     <section>
+     <!-- Footer -->
+     <footer class="text-center text-white" style="background-color: #0a4275; height: 2%; bottom: 0px">
+     <!-- Grid container -->
+     <div class="container p-4 pb-0">
+      <!-- Section: CTA -->
+      <section class="">
+        <p class="d-flex justify-content-center align-items-center">
+          <span class="me-3">mascotafeliz@gmail.com</span>
+         
+        </p>
+     
+                <!-- Section: CTA -->
+              </div>
+              <!-- Grid container -->
+
+              <!-- Copyright -->
+              <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                MIsion TIC 2022:
+                <a class="text-white" href="">Creado por equipo 2</a>
+                <img src="~/images/fivecode.png">
+              </div>
+              <!-- Copyright -->
+            </footer>
+            <!-- Footer -->
+            
+       
+       </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+
+
+</html>
